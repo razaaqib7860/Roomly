@@ -82,9 +82,14 @@ function AuthPage() {
 
         <div className="animate-float-up glass-strong rounded-3xl p-6 sm:p-8">
           <div className="mb-6 text-center">
-            <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl text-primary-foreground" style={{ background: "var(--gradient-hero)" }}>
-              <span className="font-display text-2xl leading-none">R</span>
-            </div>
+
+          <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl overflow-hidden">
+  <img 
+    src="/roomly_logo.png" 
+    alt="Roomly Logo" 
+    className="h-full w-full object-contain"
+  />
+</div>
             <h1 className="font-display text-3xl">{mode === "signup" ? "Create account" : "Welcome back"}</h1>
             <p className="mt-1 text-xs text-muted-foreground">
               Only <span className="font-medium text-foreground/80">@iiitranchi.ac.in</span> emails.
