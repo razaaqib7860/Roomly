@@ -61,7 +61,7 @@ function BrowsePage() {
   const { data, error } = await supabase
     .from("profiles")
     .select("*")
-    .eq("found_roommate", false)
+    .eq("onboarded", true)
     .neq("user_id", me!.user_id)
     .eq("year", me!.year);
 
