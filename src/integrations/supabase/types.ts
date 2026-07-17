@@ -73,7 +73,72 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      set_found_roommate: {
+        Args: { p_found: boolean; p_id: string; p_token: string }
+        Returns: {
+          bio: string | null
+          branch: string
+          created_at: string
+          found_roommate: boolean
+          gaming: string
+          hobbies: string
+          id: string
+          instagram: string | null
+          name: string
+          owner_token: string
+          sleeping_schedule: string
+          smoking: string
+          updated_at: string
+          whatsapp: string | null
+          year: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      update_profile: {
+        Args: {
+          p_bio: string
+          p_branch: string
+          p_found_roommate: boolean
+          p_gaming: string
+          p_hobbies: string
+          p_id: string
+          p_instagram: string
+          p_name: string
+          p_sleeping_schedule: string
+          p_smoking: string
+          p_token: string
+          p_whatsapp: string
+          p_year: string
+        }
+        Returns: {
+          bio: string | null
+          branch: string
+          created_at: string
+          found_roommate: boolean
+          gaming: string
+          hobbies: string
+          id: string
+          instagram: string | null
+          name: string
+          owner_token: string
+          sleeping_schedule: string
+          smoking: string
+          updated_at: string
+          whatsapp: string | null
+          year: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
     }
     Enums: {
       [_ in never]: never
