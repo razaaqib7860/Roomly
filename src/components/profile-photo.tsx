@@ -15,13 +15,23 @@ export function ProfilePhoto({
   const [url, setUrl] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
+  // useEffect(() => {
+  //   let cancel = false;
+  //   setError(false);
+  //   if (!path) { setUrl(null); return; }
+  //   signPhoto(path).then((u) => { if (!cancel) setUrl(u); });
+  //   return () => { cancel = true; };
+  // }, [path]);
   useEffect(() => {
-    let cancel = false;
-    setError(false);
-    if (!path) { setUrl(null); return; }
-    signPhoto(path).then((u) => { if (!cancel) setUrl(u); });
-    return () => { cancel = true; };
-  }, [path]);
+  console.log("PATH =", path);
+
+  if (!path) return;
+
+  signPhoto(path).then((url) => {
+    console.log("SIGNED URL =", url);
+    setUrl(url);
+  });
+}, [path]);
 
   const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map((s) => s[0]).join("").toUpperCase() || "?";
 const dims = {
