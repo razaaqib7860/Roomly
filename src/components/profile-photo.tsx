@@ -24,8 +24,12 @@ export function ProfilePhoto({
   }, [path]);
 
   const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map((s) => s[0]).join("").toUpperCase() || "?";
-  const dims = { sm: "h-10 w-10 text-sm", md: "h-16 w-16 text-lg", lg: "h-28 w-28 text-3xl", xl: "h-40 w-40 text-4xl" }[size];
-
+const dims = {
+  sm: "h-10 w-10 text-sm",
+  md: "h-16 w-16 text-lg",
+  lg: "h-28 w-28 text-3xl",
+  xl: "h-48 w-48 text-5xl",
+}[size];
   return (
     <div className={`relative shrink-0 overflow-hidden rounded-full ring-1 ring-white/10 ${dims} ${className}`}>
       {url && !error ? (
