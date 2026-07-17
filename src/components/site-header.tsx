@@ -17,20 +17,18 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/5 backdrop-blur-xl" style={{ background: "color-mix(in oklab, var(--background) 70%, transparent)" }}>
-    <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:h-24">
-  <Link to="/" className="flex items-center gap-3">
-    
-    <div 
+    <header className="sticky top-0 z-40 border-b border-white/5 backdrop-blur-xl" style={{ background: "color-mix(in oklab, var(--background) 70%, transparent)" }}> 
+     <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:h-24">
+     <Link to="/" className="flex items-center gap-3">
+     <div 
       className="grid h-14 w-14 place-items-center rounded-2xl shadow-[var(--shadow-card)]"
-    >
+     >
       <img 
         src="/roomly_logo.png"
         alt="Roomly Logo"
         className="h-11 w-11 object-contain"
       />
     </div>
-
     <div className="leading-tight">
       <div className="font-display text-2xl font-semibold tracking-tight">
         Roomly
