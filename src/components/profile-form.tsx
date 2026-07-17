@@ -37,9 +37,9 @@ type Form = z.infer<typeof schema>;
 const empty: Form = {
   name: "", branch: "CSE", year: "1st", photo_url: "", hobbies: "",
   sleeping_schedule: "flexible", smoking: "no", gaming: "no",
-  room_pref: "Double Sharing", room_pref: "No preference",
+  room_pref: "Double Sharing",
   looking_for: "", instagram: "", whatsapp: "", bio: "",
-};
+} as Form; 
 
 export function ProfileForm({
   userId, existing, isOnboarding, onDone,
@@ -104,6 +104,9 @@ export function ProfileForm({
     },
     onError: (e: Error) => toast.error(e.message),
   });
+
+console.log("existing.photo_url =", existing?.photo_url);
+console.log("form.photo_url =", form.photo_url);
 
   return (
     <div className="animate-float-up space-y-5 rounded-3xl glass-strong p-5 sm:p-7">
