@@ -37,7 +37,7 @@ type Form = z.infer<typeof schema>;
 const empty: Form = {
   name: "", branch: "CSE", year: "1st", photo_url: "", hobbies: "",
   sleeping_schedule: "flexible", smoking: "no", gaming: "no",
-  religion: "", block_pref: "No preference", room_pref: "No preference",
+  block_pref: "No preference", room_pref: "No preference",
   looking_for: "", instagram: "", whatsapp: "", bio: "",
 };
 
@@ -63,7 +63,6 @@ export function ProfileForm({
         sleeping_schedule: existing.sleeping_schedule as Form["sleeping_schedule"],
         smoking: existing.smoking as Form["smoking"],
         gaming: existing.gaming as Form["gaming"],
-        religion: existing.religion ?? "",
         block_pref: existing.block_pref ?? "No preference",
         room_pref: existing.room_pref ?? "No preference",
         looking_for: existing.looking_for ?? "",
@@ -86,7 +85,6 @@ export function ProfileForm({
         hobbies: v.hobbies,
         sleeping_schedule: v.sleeping_schedule,
         smoking: v.smoking, gaming: v.gaming,
-        religion: v.religion || null,
         block_pref: v.block_pref, room_pref: v.room_pref,
         looking_for: v.looking_for || null,
         instagram: v.instagram || null,
@@ -139,10 +137,6 @@ export function ProfileForm({
           <Pick value={form.room_pref} onChange={(v) => setForm({ ...form, room_pref: v })} options={[...ROOM_PREFS]} />
         </Field>
       </div>
-
-      <Field label="Religion (optional)">
-        <Input value={form.religion ?? ""} onChange={(e) => setForm({ ...form, religion: e.target.value })} placeholder="e.g. Hindu, Muslim, Christian, Sikh — leave blank if you prefer" />
-      </Field>
 
       <Field label="Hobbies (comma separated)">
         <Input value={form.hobbies} onChange={(e) => setForm({ ...form, hobbies: e.target.value })} placeholder="Cricket, coding, chai, music" />
