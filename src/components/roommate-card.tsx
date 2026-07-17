@@ -17,7 +17,7 @@ export function RoommateCard({ p, compatibility }: { p: Profile; compatibility?:
         aria-hidden
       />
 
-      {/* Photo hero */}
+      {/* Photo hero
       <div className="flex flex-col items-center px-6 pb-4 pt-8">
         <ProfilePhoto path={p.photo_url} name={p.name} size="lg" className="ring-4 ring-primary/20" />
         <h3 className="mt-4 text-center font-display text-2xl font-medium tracking-tight">{p.name}</h3>
@@ -34,8 +34,31 @@ export function RoommateCard({ p, compatibility }: { p: Profile; compatibility?:
               <Sparkles className="h-2.5 w-2.5" /> {t}
             </span>
           ))}
-        </div>
-      )}
+        </div> */}
+
+
+{/* Photo hero */}
+<div className="flex flex-col items-center px-6 pb-4 pt-8">
+  <ProfilePhoto
+    path={p.photo_url}
+    name={p.name}
+    size="lg"
+    className="ring-4 ring-primary/20"
+  />
+
+  <h3 className="mt-4 text-center font-display text-2xl font-medium tracking-tight">
+    {p.name}
+  </h3>
+
+  <div className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+    <GraduationCap className="h-3.5 w-3.5" />
+    {p.branch} · {p.year} year
+  </div>
+</div>
+  )
+ 
+
+
 
       {p.bio && (
         <p className="px-6 pb-4 text-center text-sm leading-relaxed text-foreground/85">{p.bio}</p>
