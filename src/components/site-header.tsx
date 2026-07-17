@@ -20,9 +20,16 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-white/5 backdrop-blur-xl" style={{ background: "color-mix(in oklab, var(--background) 70%, transparent)" }}>
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="grid h-9 w-9 place-items-center rounded-2xl text-primary-foreground shadow-[var(--shadow-card)]" style={{ background: "var(--gradient-hero)" }}>
-            <span className="font-display text-lg font-semibold leading-none">R</span>
-          </div>
+         <div 
+  className="grid h-9 w-9 place-items-center rounded-2xl shadow-[var(--shadow-card)]"
+  style={{ background: "var(--gradient-hero)" }}
+>
+  <img 
+    src="/roomly_logo.png"
+    alt="Roomly Logo"
+    className="h-7 w-7 object-contain"
+  />
+</div>
           <div className="leading-tight">
             <div className="font-display text-[15px] font-medium tracking-tight">Roomly</div>
             <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">IIIT Ranchi</div>
