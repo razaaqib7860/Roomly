@@ -35,53 +35,33 @@ export function RoommateCard({ p, compatibility }: { p: Profile; compatibility?:
             </span>
           ))}
         </div> */}
-{/* Photo Hero */}
-<div className="relative mb-3">
-  {/* Background strip */}
-  <div
-    className="h-28 w-full"
-    style={{ background: "var(--gradient-hero)" }}
+
+{/* Photo hero */}
+<div className="flex flex-col items-center px-6 pt-8 pb-6">
+  <ProfilePhoto
+    path={p.photo_url}
+    name={p.name}
+    size="xl"
+    className="ring-4 ring-primary/30 shadow-2xl"
   />
 
-  {/* Large profile image */}
-  <div className="-mt-16 flex flex-col items-center px-6">
-    <div className="transition duration-300 group-hover:scale-[1.03]">
-      <ProfilePhoto
-        path={p.photo_url}
-        name={p.name}
-        size="xl"
-        className="h-40 w-40 rounded-3xl ring-4 ring-background shadow-2xl object-cover cursor-pointer"
-      />
-    </div>
+  <h3 className="mt-6 text-center font-display text-3xl font-semibold tracking-tight">
+    {p.name}
+  </h3>
 
-    <h3 className="mt-3 text-center font-display text-2xl font-semibold leading-none tracking-tight">
-      {p.name}
-    </h3>
-
-    <p className="mt-1 text-sm text-muted-foreground">
-      {p.branch} • {p.year} Year
-    </p>
-
-    {compatibility && compatibility.length > 0 && (
-      <div className="mt-3 flex flex-wrap justify-center gap-1.5">
-        {compatibility.slice(0, 3).map((t) => (
-          <span
-            key={t}
-            className="rounded-full bg-primary/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    )}
+  <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+    <GraduationCap className="h-4 w-4" />
+    {p.branch} • {p.year} Year
   </div>
 </div>
 
-{p.bio && (
-  <p className="px-5 pb-3 text-center text-sm leading-relaxed text-foreground/85">
-    {p.bio}
-  </p>
-)}
+ 
+
+
+
+      {p.bio && (
+        <p className="px-6 pb-4 text-center text-sm leading-relaxed text-foreground/85">{p.bio}</p>
+      )}
 
       {/* Preferences grid */}
       <div className="grid grid-cols-2 gap-px bg-white/5 px-4 mx-2 rounded-2xl overflow-hidden text-xs">
