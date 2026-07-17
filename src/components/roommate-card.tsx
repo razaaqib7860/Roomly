@@ -55,7 +55,6 @@ export function RoommateCard({ p, compatibility }: { p: Profile; compatibility?:
   </div>
 </div>
 
-)
  
 
 
