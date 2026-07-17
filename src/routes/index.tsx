@@ -11,7 +11,7 @@ import { getStoredProfile } from "@/lib/profile-store";
 import { toast } from "sonner";
 import {
   Search, Instagram, MessageCircle, Moon, Sun, Cigarette, Gamepad2,
-  GraduationCap, Sparkles, CheckCircle2, UserPlus,
+  GraduationCap, Sparkles, CheckCircle2, UserPlus, Users,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
