@@ -27,7 +27,7 @@ return (
       <Link to="/" className="flex items-center gap-3">
         <div
           className="grid h-14 w-14 place-items-center rounded-2xl shadow-[var(--shadow-card)]"
-          style={{ background: "var(--gradient-hero)" }}
+         
         >
           <img
             src="/roomly_logo.png"
