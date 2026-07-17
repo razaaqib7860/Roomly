@@ -36,26 +36,26 @@ export function RoommateCard({ p, compatibility }: { p: Profile; compatibility?:
           ))}
         </div> */}
 
-
 {/* Photo hero */}
-<div className="flex flex-col items-center px-6 pb-4 pt-8">
+<div className="flex flex-col items-center px-6 pt-8 pb-6">
   <ProfilePhoto
     path={p.photo_url}
     name={p.name}
-    size="lg"
-    className="ring-4 ring-primary/20"
+    size="xl"
+    className="ring-4 ring-primary/30 shadow-2xl"
   />
 
-  <h3 className="mt-4 text-center font-display text-2xl font-medium tracking-tight">
+  <h3 className="mt-6 text-center font-display text-3xl font-semibold tracking-tight">
     {p.name}
   </h3>
 
-  <div className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
-    <GraduationCap className="h-3.5 w-3.5" />
-    {p.branch} · {p.year} year
+  <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+    <GraduationCap className="h-4 w-4" />
+    {p.branch} • {p.year} Year
   </div>
 </div>
-  )
+
+)
  
 
 
