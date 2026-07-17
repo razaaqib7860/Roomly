@@ -45,18 +45,30 @@ function BrowsePage() {
   const { data: profiles, isLoading } = useQuery({
     queryKey: ["profiles", me?.year, me?.user_id],
     enabled: !!me?.onboarded,
+    // queryFn: async () => {
+    //   const { data, error } = await supabase
+    //     .from("profiles")
+    //     .select("*")
+    //     .eq("found_roommate", false)
+    //     .eq("onboarded", true)
+    //     .neq("user_id", me!.user_id)
+    //     .eq("year", me!.year)
+    //     .order("created_at", { ascending: false });
+    //   if (error) throw error;
+    //   return data as Profile[];
+    // },
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("found_roommate", false)
-        .eq("onboarded", true)
-        .neq("user_id", me!.user_id)
-        .eq("year", me!.year)
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return data as Profile[];
-    },
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("*");
+
+  console.log(data);
+  console.log(error);
+
+  if (error) throw error;
+
+  return data;
+},
   });
 
   const filtered = useMemo(() => {
