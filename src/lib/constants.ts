@@ -1,7 +1,7 @@
-export const BRANCHES = ["CSE", "ECE", "IT", "Other"] as const;
-export const YEARS = ["1st", "2nd", "3rd", "4th", "MTech / PG"] as const;
+export const BRANCHES = ["CSE", "CSE(DS&AI)", "ECE", "ECE(IoT)","IT", "M&C"] as const;
+export const YEARS = ["1st", "2nd", "3rd", "4th"] as const;
 export const BLOCKS = ["Block 1", "Block 2", "Block 3", "Block 4", "No preference"] as const;
-export const ROOM_PREFS = ["Single sharing", "Double sharing", "No preference"] as const;
+export const ROOM_PREFS = ["Double sharing", "No preference"] as const;
 
 export const SLEEP_LABELS: Record<string, string> = {
   early_bird: "Early bird",
