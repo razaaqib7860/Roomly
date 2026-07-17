@@ -37,7 +37,7 @@ type Form = z.infer<typeof schema>;
 const empty: Form = {
   name: "", branch: "CSE", year: "1st", photo_url: "", hobbies: "",
   sleeping_schedule: "flexible", smoking: "no", gaming: "no",
-  block_pref: "No preference", room_pref: "No preference",
+  room_pref: "Double Sharing", room_pref: "No preference",
   looking_for: "", instagram: "", whatsapp: "", bio: "",
 };
 
