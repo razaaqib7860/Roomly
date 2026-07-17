@@ -296,6 +296,3 @@ function TraitCell({ icon, label }: { icon: React.ReactNode; label: string }) {
     </div>
   );
 }
-
-// tiny local re-export to avoid another import line
-import { Users } from "lucide-react";
