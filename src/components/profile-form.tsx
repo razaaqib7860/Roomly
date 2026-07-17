@@ -25,7 +25,6 @@ const schema = z.object({
   sleeping_schedule: z.enum(["early_bird", "night_owl", "flexible"]),
   smoking: z.enum(["no", "occasional", "yes"]),
   gaming: z.enum(["no", "casual", "hardcore"]),
-  religion: z.string().trim().max(40).optional(),
   block_pref: z.string().min(1, "Pick a block preference"),
   room_pref: z.string().min(1, "Pick a room preference"),
   looking_for: z.string().trim().max(200).optional(),
