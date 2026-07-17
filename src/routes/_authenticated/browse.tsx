@@ -57,21 +57,18 @@ function BrowsePage() {
     //   if (error) throw error;
     //   return data as Profile[];
     // },
-  queryFn: async () => {
+    queryFn: async () => {
   const { data, error } = await supabase
     .from("profiles")
     .select("*")
-    .eq("found_roommate", false)
-    .eq("onboarded", true)
-    .eq("year", me!.year)          // Only same year
-    .neq("user_id", me!.user_id)   // Hide yourself
-    .order("created_at", { ascending: false });
+    .eq("year", me!.year);
+
+  console.log(data);
+  console.log(error);
 
   if (error) throw error;
 
-  console.log(data); // Keep this while testing
-
-  return data as Profile[];
+  return data;
 },
   });
 
