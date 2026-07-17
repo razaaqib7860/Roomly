@@ -17,52 +17,67 @@ export type Database = {
       profiles: {
         Row: {
           bio: string | null
+          block_pref: string | null
           branch: string
           created_at: string
           found_roommate: boolean
           gaming: string
           hobbies: string
-          id: string
           instagram: string | null
+          looking_for: string | null
           name: string
-          owner_token: string
+          onboarded: boolean
+          photo_url: string | null
+          religion: string | null
+          room_pref: string | null
           sleeping_schedule: string
           smoking: string
           updated_at: string
+          user_id: string
           whatsapp: string | null
           year: string
         }
         Insert: {
           bio?: string | null
+          block_pref?: string | null
           branch: string
           created_at?: string
           found_roommate?: boolean
           gaming?: string
           hobbies?: string
-          id?: string
           instagram?: string | null
+          looking_for?: string | null
           name: string
-          owner_token?: string
+          onboarded?: boolean
+          photo_url?: string | null
+          religion?: string | null
+          room_pref?: string | null
           sleeping_schedule?: string
           smoking?: string
           updated_at?: string
+          user_id: string
           whatsapp?: string | null
           year: string
         }
         Update: {
           bio?: string | null
+          block_pref?: string | null
           branch?: string
           created_at?: string
           found_roommate?: boolean
           gaming?: string
           hobbies?: string
-          id?: string
           instagram?: string | null
+          looking_for?: string | null
           name?: string
-          owner_token?: string
+          onboarded?: boolean
+          photo_url?: string | null
+          religion?: string | null
+          room_pref?: string | null
           sleeping_schedule?: string
           smoking?: string
           updated_at?: string
+          user_id?: string
           whatsapp?: string | null
           year?: string
         }
@@ -73,72 +88,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      set_found_roommate: {
-        Args: { p_found: boolean; p_id: string; p_token: string }
-        Returns: {
-          bio: string | null
-          branch: string
-          created_at: string
-          found_roommate: boolean
-          gaming: string
-          hobbies: string
-          id: string
-          instagram: string | null
-          name: string
-          owner_token: string
-          sleeping_schedule: string
-          smoking: string
-          updated_at: string
-          whatsapp: string | null
-          year: string
-        }
-        SetofOptions: {
-          from: "*"
-          to: "profiles"
-          isOneToOne: true
-          isSetofReturn: false
-        }
-      }
-      update_profile: {
-        Args: {
-          p_bio: string
-          p_branch: string
-          p_found_roommate: boolean
-          p_gaming: string
-          p_hobbies: string
-          p_id: string
-          p_instagram: string
-          p_name: string
-          p_sleeping_schedule: string
-          p_smoking: string
-          p_token: string
-          p_whatsapp: string
-          p_year: string
-        }
-        Returns: {
-          bio: string | null
-          branch: string
-          created_at: string
-          found_roommate: boolean
-          gaming: string
-          hobbies: string
-          id: string
-          instagram: string | null
-          name: string
-          owner_token: string
-          sleeping_schedule: string
-          smoking: string
-          updated_at: string
-          whatsapp: string | null
-          year: string
-        }
-        SetofOptions: {
-          from: "*"
-          to: "profiles"
-          isOneToOne: true
-          isSetofReturn: false
-        }
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
