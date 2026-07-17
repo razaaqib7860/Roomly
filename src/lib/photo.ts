@@ -13,11 +13,20 @@ export async function uploadProfilePhoto(userId: string, file: File): Promise<st
 }
 
 /** Returns a long-lived signed URL for private bucket display. */
+// export async function signPhoto(path: string | null | undefined): Promise<string | null> {
+//   if (!path) return null;
+//   const { data, error } = await supabase.storage
+//     .from(PHOTO_BUCKET)
+//     .createSignedUrl(path, 60 * 60 * 24 * 7); // 7 days
+//   if (error) return null;
+//   return data.signedUrl;
+// }
 export async function signPhoto(path: string | null | undefined): Promise<string | null> {
   if (!path) return null;
-  const { data, error } = await supabase.storage
+
+  const { data } = supabase.storage
     .from(PHOTO_BUCKET)
-    .createSignedUrl(path, 60 * 60 * 24 * 7); // 7 days
-  if (error) return null;
-  return data.signedUrl;
+    .getPublicUrl(path);
+
+  return data.publicUrl;
 }

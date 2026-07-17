@@ -52,6 +52,7 @@ function BrowsePage() {
         .eq("found_roommate", false)
         .eq("onboarded", true)
         .neq("user_id", me!.user_id)
+        .eq("year", me!.year)
         .order("created_at", { ascending: false });
       if (error) throw error;
       return data as Profile[];
