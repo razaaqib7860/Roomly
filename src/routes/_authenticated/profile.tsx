@@ -25,12 +25,27 @@ function EditProfilePage() {
   const { data: profile, isLoading } = useQuery({
     queryKey: ["my-profile", userId],
     enabled: !!userId,
-    queryFn: async () => {
-      const { data, error } = await supabase.from("profiles").select("*").eq("user_id", userId!).maybeSingle();
-      if (error) throw error;
-      return data;
-    },
-  });
+
+    // queryFn: async () => {
+    //   const { data, error } = await supabase.from("profiles").select("*").eq("user_id", userId!).maybeSingle();
+    //   if (error) throw error;
+    //   return data;
+    // },
+  queryFn: async () => {
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("user_id", userId!)
+      .maybeSingle();
+
+    console.log("PROFILE =>", data);
+
+    if (error) throw error;
+
+    return data;
+  },
+});
+
 
   const toggleFound = useMutation({
     mutationFn: async (found: boolean) => {
