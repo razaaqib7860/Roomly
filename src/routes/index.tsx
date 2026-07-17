@@ -74,7 +74,7 @@ function LandingPage() {
             />
             <Feature
               icon={<Zap className="h-4 w-4" />}
-              title="Built for mobile"
+              title="Quick Contact"
               body="Swipe-friendly cards, quick contact via WhatsApp or Instagram. No feeds, no noise."
             />
           </div>
