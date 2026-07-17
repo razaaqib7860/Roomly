@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          bio: string | null
+          branch: string
+          created_at: string
+          found_roommate: boolean
+          gaming: string
+          hobbies: string
+          id: string
+          instagram: string | null
+          name: string
+          owner_token: string
+          sleeping_schedule: string
+          smoking: string
+          updated_at: string
+          whatsapp: string | null
+          year: string
+        }
+        Insert: {
+          bio?: string | null
+          branch: string
+          created_at?: string
+          found_roommate?: boolean
+          gaming?: string
+          hobbies?: string
+          id?: string
+          instagram?: string | null
+          name: string
+          owner_token?: string
+          sleeping_schedule?: string
+          smoking?: string
+          updated_at?: string
+          whatsapp?: string | null
+          year: string
+        }
+        Update: {
+          bio?: string | null
+          branch?: string
+          created_at?: string
+          found_roommate?: boolean
+          gaming?: string
+          hobbies?: string
+          id?: string
+          instagram?: string | null
+          name?: string
+          owner_token?: string
+          sleeping_schedule?: string
+          smoking?: string
+          updated_at?: string
+          whatsapp?: string | null
+          year?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
