@@ -61,6 +61,7 @@ function BrowsePage() {
   const { data, error } = await supabase
     .from("profiles")
     .select("*")
+    .neq("user_id", me!.user_id)
     .eq("year", me!.year);
 
   console.log(data);
